@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How a ChatGPT Codex assessment agent grades AI-supported student assignments." />
+    <meta name="theme-color" content="#0d6b68" />
+    <title>Codex Grading Agent | AI Assessment Lab</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="AI Assessment Lab home">
+        <span class="brand-mark">A</span>
+        <span>AI Assessment Lab</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="process.html">Google AI Studio</a>
+        <a href="sample.html">Sample</a>
+        <a href="rubric.html">Assessment</a>
+        <a href="codex-agent.html" aria-current="page">Codex Agent</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero codex-hero">
+        <div class="section-inner page-hero-inner">
+          <div>
+            <p class="eyebrow">Step 4</p>
+            <h1>How ChatGPT Codex Is Used to Grade the Assignment</h1>
+            <p class="hero-copy">
+              After students submit the AI interaction, Codex uses an `Agents.md` instruction file to grade the
+              transcript. The agent is strict: it rewards learning evidence and applies caps when the student only uses
+              AI to produce polished answers.
+            </p>
+          </div>
+          <aside class="agent-terminal" aria-label="Codex grading workflow">
+            <div class="terminal-bar"><span></span><span></span><span></span></div>
+            <pre><code>Read full transcript
+Identify student agency
+Check learning progression
+Apply rubric and caps
+Write evidence-based feedback</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-heading wide">
+            <p class="eyebrow">The agent's role</p>
+            <h2>Codex grades the learning process, not the AI's performance.</h2>
+            <p>
+              The agent reads the transcript and asks who is doing the intellectual work. If the student sets goals,
+              asks questions, tests AI output, revises ideas, and applies later learning, the evidence is stronger. If
+              AI controls the entire lesson, the score must remain low.
+            </p>
+          </div>
+
+          <div class="agent-steps">
+            <article>
+              <span>01</span>
+              <h3>Read the full interaction</h3>
+              <p>The agent must not grade from isolated excerpts or the final essay alone.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Find who leads</h3>
+              <p>It checks who asks meaningful questions, introduces angles, evaluates claims, and moves the dialogue forward.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Check developmental plausibility</h3>
+              <p>It looks for a believable movement from partial understanding to stronger reasoning.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Apply hard caps</h3>
+              <p>Passive AI use, no critique, no learning transfer, or front-loaded sophistication limits the score.</p>
+            </article>
+            <article>
+              <span>05</span>
+              <h3>Write transparent feedback</h3>
+              <p>Each mark is justified with evidence from the interaction, strengths, and areas for improvement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band-paper">
+        <div class="section-inner split">
+          <div class="section-heading">
+            <p class="eyebrow">False positives</p>
+            <h2>The agent is designed not to be fooled by polish.</h2>
+          </div>
+          <div class="false-positive-grid">
+            <article>
+              <h3>AI-led conversation</h3>
+              <p>If AI structures every stage and the student mainly responds, the total score normally stays low.</p>
+            </article>
+            <article>
+              <h3>No student-led inquiry</h3>
+              <p>If the student does not ask at least two substantive self-initiated questions, prompting and direction are capped.</p>
+            </article>
+            <article>
+              <h3>No critical evaluation</h3>
+              <p>If the student never questions or refines AI output, critical reflection receives little credit.</p>
+            </article>
+            <article>
+              <h3>Front-loaded sophistication</h3>
+              <p>If advanced language appears too early without visible buildup, the work cannot receive a high mark.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner final-band">
+          <div>
+            <p class="eyebrow">Output from the agent</p>
+            <h2>The feedback is structured and evidence-based.</h2>
+          </div>
+          <p>
+            The agent reports the total score, criterion-by-criterion marks, objective attainment, strengths, areas for
+            improvement, and a final evaluative comment. This makes the grading transparent while keeping the focus on
+            the student's learning behavior.
+          </p>
+          <a class="button primary" href="index.html">Return to the overview</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>AI Assessment Lab. Codex grading agent.</p>
+      <a href="index.html">Back to overview</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
