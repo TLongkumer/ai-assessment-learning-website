@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How students use Google AI Studio with a teacher-designed system prompt for AI-supported assessment." />
+    <meta name="theme-color" content="#0d6b68" />
+    <title>Google AI Studio Workflow | AI Assessment Lab</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="AI Assessment Lab home">
+        <span class="brand-mark">A</span>
+        <span>AI Assessment Lab</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="process.html" aria-current="page">Google AI Studio</a>
+        <a href="sample.html">Sample</a>
+        <a href="rubric.html">Assessment</a>
+        <a href="codex-agent.html">Codex Agent</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="section-inner page-hero-inner">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h1>Students Use Google AI Studio With a System Prompt</h1>
+            <p class="hero-copy">
+              The assignment begins before the student writes anything. The teacher first sets the behavior of the AI:
+              it must tutor, question, scaffold, and delay final answer production. Students then follow a separate
+              instruction sheet so their interaction becomes assessable learning evidence.
+            </p>
+          </div>
+          <aside class="setup-card" aria-label="Google AI Studio setup checklist">
+            <h2>Setup Checklist</h2>
+            <ul class="plain-list">
+              <li>Open Google AI Studio.</li>
+              <li>Paste the system prompt into system instructions.</li>
+              <li>Use the latest Gemini model available to the student.</li>
+              <li>Keep reasoning low and turn off extra tools/options unless instructed.</li>
+              <li>Begin only after setup by saying: "Let's start".</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner split">
+          <div class="section-heading">
+            <p class="eyebrow">Student instruction file</p>
+            <h2>The assignment tells students that process is the assessment.</h2>
+            <p>
+              The instructions for the Ethics of Care assignment make the rule explicit: students are not mainly assessed
+              for getting the right answer or producing the most polished write-up. They are assessed for how purposefully
+              they use AI to learn.
+            </p>
+          </div>
+          <div class="instruction-panel">
+            <h3>Students are expected to show that they can:</h3>
+            <ul class="check-list">
+              <li>Use AI purposefully rather than passively.</li>
+              <li>Guide the conversation with meaningful questions.</li>
+              <li>Learn from AI responses and apply that learning later.</li>
+              <li>Think critically about what the AI says.</li>
+              <li>Apply concepts to real examples and case studies.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band-ink" id="system-prompt">
+        <div class="section-inner">
+          <div class="section-heading wide">
+            <p class="eyebrow">System prompt architecture</p>
+            <h2>The prompt turns AI into a structured tutor.</h2>
+            <p>
+              The sample system prompt is for deontological ethics, but the pattern can be adapted to other topics. Its
+              most important rule is that AI should not immediately provide a finished essay, case study, or full
+              argument. It must first create a meaningful learning dialogue.
+            </p>
+          </div>
+
+          <div class="prompt-architecture">
+            <article>
+              <span>Persona</span>
+              <h3>Educational AI Tutor</h3>
+              <p>Specialist role, subject focus, and mission to develop reasoning rather than repeat definitions.</p>
+            </article>
+            <article>
+              <span>Golden rule</span>
+              <h3>No instant final answer</h3>
+              <p>Requires a minimum meaningful exchange before helping produce a final synthesis or draft.</p>
+            </article>
+            <article>
+              <span>Teaching process</span>
+              <h3>Clarify, scaffold, test</h3>
+              <p>Activates prior knowledge, introduces concepts, asks for examples, and invites counterarguments.</p>
+            </article>
+            <article>
+              <span>Final stage</span>
+              <h3>Synthesize student thinking</h3>
+              <p>Only later does AI organize the student's ideas into an outline or essay draft.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-heading wide">
+            <p class="eyebrow">How students should interact</p>
+            <h2>Good interaction means the student leads.</h2>
+          </div>
+          <div class="do-dont-grid">
+            <article class="do-card">
+              <h3>Do</h3>
+              <ul class="plain-list">
+                <li>Ask follow-up questions.</li>
+                <li>Request clarification when ideas are unclear.</li>
+                <li>Ask AI to compare concepts.</li>
+                <li>Question oversimplified answers.</li>
+                <li>Use examples to test understanding.</li>
+                <li>Explain later learning in your own words.</li>
+              </ul>
+            </article>
+            <article class="dont-card">
+              <h3>Do Not</h3>
+              <ul class="plain-list">
+                <li>Ask AI to write the whole answer immediately.</li>
+                <li>Give one prompt and copy the response.</li>
+                <li>Only answer AI questions without asking your own.</li>
+                <li>Accept AI praise as proof of strong work.</li>
+                <li>Submit polished writing without the learning process.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band-paper">
+        <div class="section-inner final-band">
+          <div>
+            <p class="eyebrow">After the conversation</p>
+            <h2>The transcript stays part of the assignment.</h2>
+          </div>
+          <p>
+            Once students believe they have achieved the objectives, they ask AI to create a final essay from the
+            conversation. They then revise structure, argument, language, and flow. The final essay matters, but the
+            transcript is what shows whether AI was used as a learning partner.
+          </p>
+          <a class="button primary" href="sample.html">View the sample assignment</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>AI Assessment Lab. Google AI Studio workflow.</p>
+      <a href="sample.html">Next: sample</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
