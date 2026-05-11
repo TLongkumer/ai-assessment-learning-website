@@ -1,4 +1,4 @@
-name: Deploy React site to GitHub Pages
+name: Restore reworked source to main
 
 on:
   push:
@@ -7,18 +7,9 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  restore:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,30 +25,14 @@ jobs:
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           tar -xzf /tmp/ai-assessment-site.tar.gz -C .
           find . -name '._*' -delete
-          git status --short
 
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: 22
 
-      - name: Install dependencies
+      - name: Install dependencies and create lockfile
         run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
       - name: Commit restored source
         shell: bash
