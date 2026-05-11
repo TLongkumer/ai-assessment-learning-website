@@ -1,37 +1,54 @@
-# AI Assessment Lab
+# Assessing AI-Supported Learning
 
-This repository contains a public static website explaining an AI-supported assessment workflow.
+This repository contains a React and Tailwind CSS website explaining a process-based framework for assessing AI-supported learning in higher education.
 
-The site is organized around the actual assessment process:
+The site is grounded in the assessment documents in the local `Assessment` folder and the attached website prompt. It explains the actual process:
 
-- students use Google AI Studio with a teacher-designed system prompt,
-- students follow a clear instruction sheet while interacting with AI,
-- a sample assignment shows what strong AI-supported learning looks like,
-- rubric criteria explain how the learning process is assessed,
-- and a ChatGPT Codex grading agent evaluates transcripts using `Agents.md` style instructions.
+- students use Google AI Studio with a teacher-designed system prompt;
+- students follow a structured learning conversation before asking for a final essay;
+- the transcript is treated as learning evidence;
+- rubrics assess student agency, strategic prompting, critical reflection, and learning transfer;
+- and a Codex grading agent applies hard caps when the transcript shows passive or implausible AI use.
 
-## Pages
+## Site Sections
 
-- `index.html` - overview of the full workflow
-- `process.html` - Google AI Studio setup, student instructions, and system prompt structure
-- `sample.html` - dedicated assignment sample page
-- `rubric.html` - assessment criteria and rubric creation logic
-- `codex-agent.html` - how the Codex grading agent reviews transcripts
+- Home
+- About the assessment model
+- Full assessment process
+- Google AI Studio setup
+- Student workflow
+- System prompt method
+- Student-AI conversation process
+- Final essay generation process
+- What students submit
+- Rubric and grading criteria
+- Assessment agent and grading logic
+- Examples and samples
+- Templates and downloads
+- FAQ
+- Contact / About Me
 
 ## Local Preview
 
-Open `index.html` directly in a browser, or run:
+Install dependencies and start the Vite dev server:
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then visit `http://localhost:8080`.
+Then visit the local URL printed by Vite.
+
+To create a production build:
+
+```bash
+npm run build
+```
 
 ## GitHub Pages
 
-The repository includes a GitHub Pages workflow at `.github/workflows/pages.yml`. After pushing this repository to GitHub, the workflow deploys the static site from the repository root.
+The repository includes a GitHub Pages workflow at `.github/workflows/pages.yml`. On push to `main`, GitHub Actions installs dependencies, builds the Vite site, and deploys `dist`.
 
 ## Privacy Note
 
-The website uses curated public-facing explanations. It does not publish raw student submissions or private assessment files.
+The website uses curated public-facing explanations and sample descriptions. It does not publish raw private student submissions.

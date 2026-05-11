@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AI assessment mark">
+  <rect width="64" height="64" rx="10" fill="#12313f"/>
+  <path d="M16 45 28 17h8l12 28h-7l-3-8H26l-3 8h-7Zm13-14h8l-4-10-4 10Z" fill="#f2c66d"/>
+  <path d="M15 51h34" stroke="#70a99a" stroke-width="4" stroke-linecap="round"/>
+</svg>
