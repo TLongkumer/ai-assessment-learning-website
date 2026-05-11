@@ -1,71 +1,14 @@
-name: Deploy React site to GitHub Pages
+name: Stage assessment site source
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  noop:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          persist-credentials: true
-
-      - name: Restore reworked source
-        shell: bash
-        run: |
-          set -euo pipefail
-          curl -L https://raw.githubusercontent.com/TLongkumer/ai-assessment-learning-website/fdad279952f67d5f6ea8a3772c8f7a6252390bf0/.github/workflows/pages.yml \
-            | sed -n '34{s/^[[:space:]]*//;p;}' \
-            | base64 -d > /tmp/ai-assessment-site.tar.gz
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          tar -xzf /tmp/ai-assessment-site.tar.gz -C .
-          git status --short
-
-      - name: Setup Node
-        uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Commit restored source
-        shell: bash
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add -A
-          git commit -m 'Rework site from assessment prompt' || exit 0
-          git push
+      - name: Staging placeholder
+        run: echo Source archive parts are being staged.
