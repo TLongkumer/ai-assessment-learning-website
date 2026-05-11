@@ -1,17 +1,17 @@
-name: Deploy static site to GitHub Pages
+name: Deploy React site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -23,6 +23,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Restore reworked source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/ai-assessment-site.tar.gz.b64 <<'SITE_ARCHIVE'
+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
+SITE_ARCHIVE
+          base64 -d /tmp/ai-assessment-site.tar.gz.b64 > /tmp/ai-assessment-site.tar.gz
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          tar -xzf /tmp/ai-assessment-site.tar.gz -C .
+          git status --short
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -30,8 +56,17 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "."
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Commit restored source
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'Rework site from assessment prompt' || exit 0
+          git push
