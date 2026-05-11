@@ -33,13 +33,13 @@ jobs:
           cat .bootstrap2/archive.part* | tr -d '\n' | base64 -d > /tmp/ai-assessment-site.tar.gz
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           tar -xzf /tmp/ai-assessment-site.tar.gz -C .
+          find . -name '._*' -delete
           git status --short
 
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: 22
-          cache: npm
 
       - name: Install dependencies
         run: npm install
