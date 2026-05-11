@@ -21,10 +21,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p /tmp/current-workflow
+          cp .github/workflows/pages.yml /tmp/current-workflow/pages.yml
           cat .bootstrap2/archive.part* | tr -d '\n' | base64 -d > /tmp/ai-assessment-site.tar.gz
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           tar -xzf /tmp/ai-assessment-site.tar.gz -C .
           find . -name '._*' -delete
+          mkdir -p .github/workflows
+          cp /tmp/current-workflow/pages.yml .github/workflows/pages.yml
 
       - name: Setup Node
         uses: actions/setup-node@v5
